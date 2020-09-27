@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% block content %}
+
+   
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Blogs</h1>
+
+          {% for i in context %}
+          <div class="card shadow mb-4">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+              <h6 class="m-0 font-weight-bold text-primary">{{i.name}}</h6>
+              <strong> {{i.author}}</strong>
+            </a>
+            <div class="card-body">
+              {{i.description}}
+            </div>
+            <!-- Card Content - Collapse -->
+            <div class="collapse show" id="collapseCardExample">
+              <div class="card-body">
+               
+                <img class="img-responsive" src=" {{i.images.url}} " alt="" style="width: 80%;">
+                {{i.content | safe}}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+        <!-- /.container-fluid -->
+
+  {% endblock content%}
