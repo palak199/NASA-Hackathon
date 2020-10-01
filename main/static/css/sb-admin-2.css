@@ -11221,6 +11221,7 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
 
+<<<<<<< HEAD
 body{
   padding-top:50px;
   background: #555;
@@ -11275,4 +11276,164 @@ body{
 .inner{
   margin:0px !important;
   width: 270px;
+=======
+/* Font Family
+================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+
+
+/* Global Styles
+================================================== */
+
+html,body {
+-webkit-font-smoothing:antialiased;
+-webkit-text-size-adjust:100%;
+background-color:#0665a2;
+color:#fff;
+font-size:1rem;
+font-family:"Oxygen", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight:400;
+letter-spacing:.025rem;
+line-height:1.618;
+padding:1rem 0;
+}
+
+*,::before,::after {
+box-sizing:border-box;
+}
+
+* {
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-webkit-tap-highlight-color:transparent;
+}
+
+
+/* Setup
+================================================== */
+
+.container { position:relative; margin:0 auto; max-width:800px; width:100%; }
+.column { width:inherit; }
+
+
+/* Typography / Links
+================================================== */
+
+p { color:#fff; display:block; font-size:.9rem; font-weight:400; margin:0 0 2px; }
+
+a,a:visited { color:#8cc3e6; outline:0; text-decoration:underline; }
+a:hover,a:focus { color:#bbdef5; }
+p a,p a:visited { line-height:inherit; }
+
+
+/* Misc.
+================================================== */
+
+.add-bottom { margin-bottom:2rem !important; }
+.left { float:left; }
+.right { float:right; }
+.center { text-align:center; }
+.hidden { display:none; }
+
+.no-support {
+margin:2rem auto;
+text-align:center;
+width:90%;
+}
+
+
+/* Audio player ================================================== */
+
+@font-face {
+  font-family:"SSStandard";
+src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ss-standard.woff') format('woff');
+font-weight:normal;
+font-style:normal;
+}
+.ss-icon,.ss-icon.ss-standard {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  white-space: nowrap;
+  font-feature-settings: "liga","dlig";
+}
+.ss-icon,.ss-icon.ss-standard {
+  font-family: "SSStandard";
+}
+* { box-sizing: border-box; }
+figure#audioplayer { 
+border: 1px solid #000;
+background: #333;
+background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/dark_wall.png);
+overflow: hidden;
+width: 32rem;
+padding: .4rem;
+margin: 0 auto;
+}
+figure#audioplayer audio { width: 0; height: 0; }
+figure#audioplayer figcaption { 
+width: 21.5rem; font-size: 0;
+margin: .45rem; background: #000;
+float: left; 
+border: 1px solid #555;
+}
+figure#audioplayer figcaption div { 
+background: #000;
+color: #fff;
+padding: .8rem;
+font-family: Avenir, Helvetica, sans-serif;
+text-transform: uppercase; font-size: .8rem;
+display: inline-block;
+}
+figure#audioplayer figcaption div span { 
+display: block;
+font-size: 1.3rem;
+text-indent: 1rem; 
+}
+div#album { 
+border-top: 1px solid #555;
+border-bottom: 1px solid #555;
+width: 100%; 
+}
+div#time { 
+width: 7.55rem;
+border-left: 1px solid #555; 
+}
+input#volumeSlider { -webkit-appearance: slider-vertical;  }
+figure#audioplayer button { 
+width: 3rem; height: 3rem; 
+background: #000; color: #fff; 
+border: none; 
+}
+#playback { clear: both; }
+div#fader { display: inline-block; }
+#playback progress { 
+margin-left: 1rem; 
+width: 20rem; height: 12px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+background-color: #888;
+border: none;
+color: hsl(44,100%,44%);
+}
+progress::-webkit-progress-bar, progress::-moz-progress-bar, progress::progress-bar {
+background: hsl(44,100%,44%);
+}
+progress::-webkit-progress-value { background: hsl(44,100%,44%); }
+progress::-moz-progress-bar {
+background-color: hsl(44,100%,44%);
+}
+@media screen and (max-width: 500px) {
+div#time { display: block !important; border-top: 1px solid #555; width: 100%; }
+figure#audioplayer { width: 100%; padding: .2rem; }
+figure#audioplayer figcaption div { padding: .4rem; }
+}
+@media screen and (max-width: 450px) {
+figure#audioplayer figcaption { width: 16rem; }
+#playback progress { width: 220px; } 
+}
+@media screen and (max-width: 400px) {
+figure#audioplayer figcaption { width: 14rem; }
+>>>>>>> refs/remotes/origin/master
 }

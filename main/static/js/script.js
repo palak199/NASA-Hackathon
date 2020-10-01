@@ -11,10 +11,14 @@ $(document).ready(function() {
 			return false;
 		}
 	});
+<<<<<<< HEAD
 	$('.flip').hover(function(){
         $(this).find('.card').toggleClass('flipped');
 
  });
+=======
+
+>>>>>>> refs/remotes/origin/master
 	$("#calculate-btn").on("click", function() {
 		var calculateAndDisplayScore = function() {
 			window.scrollTo(0, 400);

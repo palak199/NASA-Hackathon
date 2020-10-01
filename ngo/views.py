@@ -1,5 +1,6 @@
 from django.shortcuts import render ,redirect
 from .models import Ngo ,Individual,Industry
+from register.models import Category
 # Create your views here.
 
 
@@ -82,10 +83,10 @@ def indus_survey(request):
             nature_waste         = request.POST["nature_waste"],
         )
         x.save()
-        return redirect('home')
-
-
-
-
-
+        return redirect('result_main')
     return render(request,'industry-survey.html')
+
+
+
+
+

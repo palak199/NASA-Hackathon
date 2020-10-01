@@ -15,12 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from register.views import register
+from register.views import register,category
 from login.views import log_in
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from blog.views import blog_view
 from django.conf.urls.static import static
+from ngo import urls
+from leaderboard import urls
+from quiz.views import quiz
+from pledge.views import send_pledge
+from orgs_and_ngos.views import orgs_view,ngos_view
+from carbon_footprint.views import c_footprint
 
 
 urlpatterns = [
@@ -28,12 +34,17 @@ urlpatterns = [
     path('',include('main.urls') ),
     path('blog/',include('blog.urls') ),
     path('register/', register, name='register' ),
+    path('register/category', category, name='category' ), #added for category selection
     path('login/', log_in , name='login'),
     path('', include('social_django.urls', namespace='social')),
-    path(
-    'logout/',
-    LogoutView.as_view(template_name=settings.LOGOUT_REDIRECT_URL),
-    name='logout'
-    ),
+    path('logout/',LogoutView.as_view(template_name=settings.LOGOUT_REDIRECT_URL),name='logout'),
+    path('',include('ngo.urls')),#for viewing and registring NGO,Indu,Indiv survey and ping
+    path('',include('leaderboard.urls')),#for viewing and registring NGO,Indu,Indiv survey and ping
+    path('quiz/',quiz, name='quiz' ),
+    path('pledge/',send_pledge, name='pledge' ),##arithmeticpal
+    
+    path('orgs/', orgs_view, name='orgs' ),
+    path('ngos/', ngos_view, name='ngos' ),
+    path('carbon_footprint/', c_footprint, name='carbon_footprint' ),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
