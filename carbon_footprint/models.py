@@ -16,9 +16,9 @@ class Carbon_footprint(models.Model):
     oil = models.IntegerField()
     car = models.IntegerField()
     flights = models.IntegerField()
-    newspaper = models.CharField(max_length=10, choices=CHOICES)
-    aluminium = models.CharField(max_length=10, choices=CHOICES)
-    date        =  models.DateTimeField(default=timezone.now)
+    meal = models.CharField(max_length=10, choices=CHOICES)
+    day = models.CharField(max_length=10, choices=CHOICES)
+    date        =  models.DateField(default=timezone.now)
 
    
     def __str__(self):
