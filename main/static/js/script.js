@@ -11,7 +11,10 @@ $(document).ready(function() {
 			return false;
 		}
 	});
+	$('.flip').hover(function(){
+        $(this).find('.card').toggleClass('flipped');
 
+ });
 	$("#calculate-btn").on("click", function() {
 		var calculateAndDisplayScore = function() {
 			window.scrollTo(0, 400);

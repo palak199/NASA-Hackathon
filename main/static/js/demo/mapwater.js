@@ -22,7 +22,6 @@ google.charts.setOnLoadCallback(drawChart);
       ["South Korea", 15000, 290],
       ["Switzerland", 35000, 230],
       ["United Kingdom", 4015000, 750],
-      ["United States", 5000500, 1500],
     ]);
 
     var options = {
@@ -42,10 +41,10 @@ google.charts.setOnLoadCallback(drawChart);
       legend: "none",
     };
 
-    var chart2 = new google.visualization.GeoChart(
+    var chart = new google.visualization.GeoChart(
       document.getElementById("regions_div_water")
     );
-    chart2.draw(data, options);
+    chart.draw(data, options);
   }
   $(document).ready(function () {
     $(window).resize(function () {

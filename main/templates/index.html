@@ -1,14 +1,21 @@
 {% extends "base.html"%}
 {% block content %}
 <style>
-
-   .chart{
-     height:300px;
-
-   }
-   .carousel-control-prev-icon{
-     color: grey;
-   }
+  .chart{
+    height:400px;
+  }
+  .carousel-control-next-icon:after
+  {
+    content: '>';
+    font-size: 25px;
+    color:black;
+  }
+  
+  .carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 25px;
+    color: black;
+  }
 
 </style>
         <!-- Begin Page Content -->
@@ -17,26 +24,23 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1><br>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Certificate</a>
 
           </div>
-          <h5 class="h5 mb-0 text-gray-800">              
-            {% if tip %}💡 {{ tip }}{% endif %}
-          </h5>
+
           <!-- Content Row -->
           <div class="row mt-2">
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-4 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">CARBON DIOXIDE</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Carbon dioxide levels in the air are at their highest in 650,000 years</div>
+                      <div class="h6 mb-0 text-gray-800">Carbon dioxide levels in the air are at their highest in 650,000 years</div>
                     </div>
                     <div class="col-auto">
-      
                       <i class="fas fa-arrow-up fa-2x text-danger-300"></i>
                     </div>
                   </div>
@@ -44,14 +48,13 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-4 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">GLOBAL TEMPERATURE</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <div class="h6 mb-0  text-gray-800">
                         Nineteen of the 20 warmest years on record have occurred since 2001</div>
                     </div>
                     <div class="col-auto">
@@ -62,8 +65,7 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <!-- <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -73,7 +75,6 @@
                         <div class="col-auto">
                           <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Global average sea level has risen nearly 7" (178 mm) over the past 100 years</div>
                         </div>
-
                       </div>
                     </div>
                     <div class="col-auto">
@@ -82,16 +83,16 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-4 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">ICE SHEETS</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><div class="vital_signs_description">
+                      <div class="h6 mb-0 text-gray-800"><div class="vital_signs_description">
                         Satellite data show that Earth's polar ice sheets are losing mass
                         </div></div>
                     </div>
@@ -113,7 +114,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">WATER AND CARBON EMISSION ANALYSER!</h6>
+                  <h6 class="m-0 font-weight-bold text-warning"><span class="text-primary">WATER</span> AND <span class="text-dark">CARBON</span> EMISSION ANALYSER!</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -177,13 +178,11 @@
           </div>
 
           <!-- Content Row -->
-          <div class="row">
-
             <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+            
 
               <!-- Project Card Example -->
-              <div class="card shadow mb-4">
+              <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
                 </div>
@@ -209,10 +208,10 @@
                     <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Color System -->
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-primary text-white shadow">
                     <div class="card-body">
@@ -279,72 +278,15 @@
               </div>
             </div>
 
-            </div>
+            </div> -->
 
-            <div class="col-lg-6 mb-4">
 
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                  </div>
-                  <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
-                  <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
-                </div>
-              </div>
-              <div class="container">
-                <h1>Bootstrap Carousel Sample</h1>
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="chart" id="regions_div_carbon"> </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="chart" id="regions_div_water"> </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="chart" id="regions_div_waste"> </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                  </div>
-                 
-                </div>
-              </div>
-              <!-- Approach -->
-              <!-- <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                </div>
-                <div class="card-body">
-                  <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p>
-                  <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div> -->
-        <!-- /.container-fluid -->
-
-      </div>
+     
 
       <!-- scripts for maps-->
         <script
           type="text/javascript"
-          src="https://www.gstatic.com/charts/loader.js"
-        ></script>
+          src="https://www.gstatic.com/charts/loader.js"></script>
       <!-- End of Main Content -->
       {% endblock content%}
 
