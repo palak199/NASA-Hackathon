@@ -1,0 +1,140 @@
+{% extends "base.html"%}
+{% block content %}
+<style>
+  .slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 10px 10px 10px 10px;;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    border-radius:50%;
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+</style>
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Lets analyse your priorities!</h1>
+              </div>
+              <form class="user" method="POST">
+                {% csrf_token %}
+              
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">
+                      NGO\Organizational name</label>
+                      <input type="text" name="name" value="Enter Name">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">
+                      NGO\Organizational Motto</label>
+                      <input type="text" name="objective" value="Enter objective">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">
+                      NGO\Organizational description</label>
+                      <textarea type="text" name="description" value="Enter description"></textarea>
+                  </div>
+
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">scope </label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="scope">
+                      <option value="rural">Rural</option>
+                      <option value="Urban">Urban</option>
+                      <option value="national">National</option>
+                      <option value="international">international</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Registration Number
+                    . </label>
+                  <input type='number' name='reg_no' >
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">website
+                      . </label>
+                    <input type='text' name='website' >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">email
+                      . </label>
+                    <input type='email' name='email' >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">contribution
+                      . </label>
+                    <input type='text' name='contribution' >
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-user btn-block">
+                    Analyse!
+                  </button>
+
+
+              </form>
+              <hr>
+              
+          
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<script>
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+  {% endblock content%}
