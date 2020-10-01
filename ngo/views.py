@@ -52,7 +52,7 @@ def indv_survey(request):
             diet         = request.POST["diet"],
         )
         x.save()
-        return redirect('home')
+        return redirect('result_main')
 
 
     return render(request,"individual-survey.html")

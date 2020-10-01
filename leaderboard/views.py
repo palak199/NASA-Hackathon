@@ -2,7 +2,9 @@ from django.shortcuts import render ,redirect
 from ngo.models import Industry,Individual
 from register.models import Category
 from django.contrib.auth.models import User
-from .models import Indus_lb,Indv_lb
+from .models import Indus_lb,Indv_lb,Carbon_fp
+from carbon_footprint.models import Carbon_footprint
+from django.utils import timezone
 
 
 # Create your views here.
@@ -87,8 +89,7 @@ def result_main(request):
         score = 0
         data = Individual.objects.filter(user=user)
         for i in data:
-            if i.pollution == 'yes':
-                score = score + 10
+        
 
             if i.garbage =='to some extent':
                 score = score + 5
@@ -187,6 +188,33 @@ def result_main(request):
                 return render(request,'result-main.html',{'score_in':score_in})
         
     return render(request,'result-main.html')
+
+def carbon_daily(request):
+    user = request.user
+    data = Carbon_footprint.objects.filter(date=timezone.now).filter(user=user)
+
+    for i in data:
+        carb_fp = carb_fp + float(i.electric)*0.75
+        carb_fp = carb_fp + (float(i.gas)*0.3*1665)/1000
+        carb_fp = carb_fp + (float(i.oil)*2500)/1000
+        carb_fp = carb_fp + (float(i.car)*123)/1000
+        carb_fp = carb_fp + (float(i.flights)*90000)
+        if i.meal =='yes':
+            carb_fp = carb_fp + 400
+        else:
+            carb_fp = carb_fp +550
+        x = Carbon_fp.objects.create(
+            user= user,
+            carbon = carb_fp
+
+        )
+        x.save()
+
+        score_in = Carbon_fp.objects.filter(date = timezone.now)
+        return render(request,'result-main.html',{'score_in':score_in})
+
+    # return render(request ,'result-main.html')
+
 
 
 def lb(request):
