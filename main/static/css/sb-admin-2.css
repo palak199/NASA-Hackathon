@@ -19,6 +19,7 @@
   --orange: #fd7e14;
   --yellow: #f6c23e;
   --green: #1cc88a;
+  --celadon: #99D19C;
   --teal: #20c9a6;
   --cyan: #36b9cc;
   --white: #fff;
@@ -9874,7 +9875,7 @@ a:focus {
 }
 
 .bg-gradient-primary {
-  background-color: #4e73df;
+  background-color: #99D19C;
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
   background-size: cover;
 }
