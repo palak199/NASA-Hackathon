@@ -77,10 +77,10 @@
           </div> 
 
           <!-- row 2-->
-          <!-- <div class="row mt-5">
+          <div class="row mt-5">
             <div class="col-5 m-2 card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Carbon Footprint Leaderboard</h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -88,80 +88,31 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th scope="col">bla</th>
-                          <th scope="col">bla</th>
-                          <th scope="col">bla</th>
-                          <th scope="col">bla</th>
+                          <th scope="col">Rank</th>
+                          <th scope="col">name</th>
+                          <th scope="col">Score</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
+
+                        {% for i in carbon_fp %}
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <th scope="row">{{ forloop.counter }}</th>
+                          <td>{{ i.user }}</td>
+                          <td>{{ i.carbon }}</td>
                         </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
+                        
+                       {% endfor %}
+                       
                       </tbody>
                     </table>  
                 </div>
               </div>
             </div> 
-            <div class="col-5 m-2 card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
-                          
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-  
-                </div>
-              </div>
-            </div>
+            
 
-          </div> -->
+          </div>
         <!-- /.container-fluid -->
 
       </div>
