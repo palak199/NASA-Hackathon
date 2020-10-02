@@ -16,8 +16,6 @@ from django.core.mail import send_mail
 # Create your views here.
 def send_pledge(request):
     
-    
-
     if request.method == 'POST':
         subject = "Pledge signed"
         plain_message="Congrats."
@@ -28,10 +26,13 @@ def send_pledge(request):
        
         recievers.append(user)
         
-        # print(recievers)
+        
         send_mail(subject, plain_message, EMAIL_HOST_USER, recievers,html_message=message)
-            
-    return render(request,"pledge.html")
+        return redirect('home')
+    
+    else:
+        redirect('survey')
+
 
    
         

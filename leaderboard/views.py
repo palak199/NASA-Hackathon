@@ -180,7 +180,7 @@ def result_main(request):
                     score = final,
                 )
                 x.save()
-                score_in = Indc_lb.objects.filter(user=user)
+                score_in = Indv_lb.objects.filter(user=user)
                 return render(request,'result-main.html',{'score_in':score_in})
             except:
                 score_in = Indus_lb.objects.filter(user=user)

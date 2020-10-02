@@ -4,18 +4,6 @@
   .chart{
     height:400px;
   }
-  .carousel-control-next-icon:after
-  {
-    content: '>';
-    font-size: 25px;
-    color:black;
-  }
-  
-  .carousel-control-prev-icon:after {
-    content: '<';
-    font-size: 25px;
-    color: black;
-  }
 
 </style>
         <!-- Begin Page Content -->
@@ -23,13 +11,15 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1><br>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Certificate</a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Take a pledge</button><br>
+            <button href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Certificate</button>
 
           </div>
 
           <!-- Content Row -->
-          <div class="row mt-2">
+          <div class="row">
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-4 mb-4">
@@ -176,125 +166,75 @@
               </div>
             </div>
           </div>
-<!-- audio player-->
-<figure id="audioplayer" itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
-  <figcaption>
-  <div>Track<span itemprop="name">24 Ghosts III</span></div>
-  <div id="album">Album<span itemprop="inAlbum">Ghosts III</span></div>
-  <div id="artist">Artist<span itemprop="byArtist">Nine Inch Nails</span></div>
-  <div id="time">Time<span id="playbacktime">00:00</span></div>
-  </figcaption>
-  <meta itemprop="duration" content="PT2M29S">
-  <div id="fader"></div>
-  <div id="playback"></div>
-  <audio controls src="https://thenewcode.com/assets/audio/24-ghosts-III.mp3" id="audiotrack" preload="auto" itemprop="audio"></audio>
-  </figure>
-          <!-- Content Row -->
-            <!-- Content Column -->
-            
-
-              <!-- Project Card Example -->
-              <!-- <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                </div>
-                <div class="card-body">
-                  <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="row mb-2">
+            <div class="col-8 offset-1">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="chart" id="regions_div_water" alt="First slide"></div>
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Fresh water discharge</h5>
+                        <p class="text-primary">year 2018</p>
+                      </div>
                   </div>
-                  <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="carousel-item">
+                    <div class="chart" id="regions_div_carbon" alt="Second slide"></div>
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Carbon dioxide emission</h5>
+                        <p class="text-primary">year 2018</p>
+                      </div>
                   </div>
-                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="carousel-item">
+                    <div class="chart" id="regions_div_waste" alt="Third slide"></div>
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Municipal waste generation</h5>
+                        <p class="text-primary">year 2019</p>
+                      </div>
                   </div>
                 </div>
-              </div> -->
-
-              <!-- Color System -->
-              <!-- <div class="row">
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-primary text-white shadow">
-                    <div class="card-body">
-                      Primary
-                      <div class="text-white-50 small">#4e73df</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-success text-white shadow">
-                    <div class="card-body">
-                      Success
-                      <div class="text-white-50 small">#1cc88a</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-info text-white shadow">
-                    <div class="card-body">
-                      Info
-                      <div class="text-white-50 small">#36b9cc</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-warning text-white shadow">
-                    <div class="card-body">
-                      Warning
-                      <div class="text-white-50 small">#f6c23e</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-danger text-white shadow">
-                    <div class="card-body">
-                      Danger
-                      <div class="text-white-50 small">#e74a3b</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-secondary text-white shadow">
-                    <div class="card-body">
-                      Secondary
-                      <div class="text-white-50 small">#858796</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-light text-black shadow">
-                    <div class="card-body">
-                      Light
-                      <div class="text-black-50 small">#f8f9fc</div>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-lg-6 mb-4">
-                <div class="card bg-dark text-white shadow">
-                  <div class="card-body">
-                      Dark
-                      <div class="text-white-50 small">#5a5c69</div>
-                  </div>
-                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
             </div>
+</div>
+          </div>
+</div>
+     </div>
 
-            </div> -->
-
-
-     
-
+<form>
+<!-- Pledge Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary text-center" id="exampleModalLabel">Pledge</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-success">
+        It is our moral duty to save our planet for future generations. 
+        Click the yes button and we'll count you in!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Maybe later!</button>
+        <button type="submit" href="{% url 'pledge' %}" class="btn btn-primary">Yes!</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
       <!-- scripts for maps-->
         <script
           type="text/javascript"
