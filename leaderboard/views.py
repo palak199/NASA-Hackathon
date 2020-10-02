@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Indus_lb,Indv_lb,Carbon_fp
 from carbon_footprint.models import Carbon_footprint
 from django.utils import timezone
+import datetime
 
 
 # Create your views here.
@@ -85,6 +86,7 @@ def result_main(request):
             except:
                 score_in = Indus_lb.objects.filter(user=user)
                 return render(request,'result-main.html',{'score_in':score_in})
+                
     if category == 'individual':
         score = 0
         data = Individual.objects.filter(user=user)
@@ -176,7 +178,7 @@ def result_main(request):
                
             final = (score/180)*100
             try:
-                x = Indus_lb.objects.create(
+                x = Indv_lb.objects.create(
                     user=request.user,
                     score = final,
                 )
@@ -184,34 +186,42 @@ def result_main(request):
                 score_in = Indv_lb.objects.filter(user=user)
                 return render(request,'result-main.html',{'score_in':score_in})
             except:
-                score_in = Indus_lb.objects.filter(user=user)
+                score_in = Indv_lb.objects.filter(user=user)
                 return render(request,'result-main.html',{'score_in':score_in})
         
     return render(request,'result-main.html')
 
 def carbon_daily(request):
+    today = datetime.datetime.now().date()
     user = request.user
-    data = Carbon_footprint.objects.filter(date=timezone.now).filter(user=user)
-
+    x=Carbon_fp.objects.filter(user=request.user)
+    if x :
+        x=x[0].date
+        if x==today:
+            score_in = Carbon_fp.objects.filter(date = today).filter(user=user)
+            return render(request,'result-main.html',{'score_in':score_in})
+    data = Carbon_footprint.objects.filter(date=today).filter(user=user)
+    carb_fp=0
+    print(data[0].electric)
     for i in data:
         carb_fp = carb_fp + float(i.electric)*0.75
         carb_fp = carb_fp + (float(i.gas)*0.3*1665)/1000
         carb_fp = carb_fp + (float(i.oil)*2500)/1000
         carb_fp = carb_fp + (float(i.car)*123)/1000
-        carb_fp = carb_fp + (float(i.flights)*90000)
+        carb_fp = carb_fp + (float(i.flights)*90)
         if i.meal =='yes':
-            carb_fp = carb_fp + 400
+            carb_fp = carb_fp + 0.4
         else:
-            carb_fp = carb_fp +550
+            carb_fp = carb_fp +0.7
+            
         x = Carbon_fp.objects.create(
             user= user,
             carbon = carb_fp
-
         )
         x.save()
 
-        score_in = Carbon_fp.objects.filter(date = timezone.now)
-        return render(request,'result-main.html',{'score_in':score_in})
+    score_in = Carbon_fp.objects.filter(date = today).filter(user=user)
+    return render(request,'result-main.html',{'score_in':score_in})
 
     # return render(request ,'result-main.html')
 
@@ -220,16 +230,19 @@ def carbon_daily(request):
 def lb(request):
 
 
-
-
     indus  = Indus_lb.objects.all()
     indv   = Indv_lb.objects.all()
+
+    today = datetime.datetime.now().date()
+    x=Carbon_fp.objects.filter(date=today)
+
 
 
 
     context = {
         'indus':indus,
-        "indv" :indv
+        "indv" :indv,
+        'carbon_fp':x,
     }
 
 

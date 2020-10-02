@@ -54,10 +54,14 @@
         </li>
 
 
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'ngos' %}">
-          <i class="fas fa-hand-holding-medical"></i><span>NGO</span></a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ngos' %}">
+            <i class="fas fa-hand-holding-medical"></i><span>NGO</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'carbon_footprint' %}">
+            <i class="fas fa-shoe-prints"></i><span>Carbon footprint</span></a>
+        </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'quiz' %}">
         <i class="fas fa-book-reader"></i><span>Quizzes</span></a>
@@ -77,6 +81,16 @@
           <span>Add a Post</span></a>
          </i>
       </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'leader_board' %} "> <i class="fas fa-fw fa-chart-area"></i>
+          <span>Leaderboard</span></a>
+         </i>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'carbon_footprint' %} "> <i class="fas fa-fw fa-chart-area"></i>
+          <span>Check your carbon footprint</span></a>
+         </i>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %} "> <i class="fas fa-fw fa-chart-area"></i>
           <span>logout</span></a>

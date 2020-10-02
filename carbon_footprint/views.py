@@ -8,13 +8,12 @@ import datetime
 
 # Create your views here.
 def c_footprint(request):
-    date        =  datetime.datetime.now().strftime("%x")
-    check=Carbon_footprint.objects.all().filter(user=request.user)
-    if check:
-        check=check[0].date.strftime("%x")
-        if check==date:
+    today = datetime.datetime.now().date()
+    x=Carbon_footprint.objects.filter(user=request.user)
+    if x :
+        x=x[0].date
+        if x==today:
             return render(request,'404.html')
-    print(check)
     if request.method=='POST':
         x=Carbon_footprint.objects.create(
             user=request.user,

@@ -20,6 +20,7 @@ class Carbon_footprint(models.Model):
     day = models.CharField(max_length=10, choices=CHOICES)
     date        =  models.DateField(default=timezone.now)
 
-   
+    class Meta:
+        ordering = ['-date']
     def __str__(self):
         return f'{self.user.username} carbon_footprint'

@@ -22,4 +22,7 @@ class Carbon_fp(models.Model):
     carbon  = models.IntegerField()
     date  = models.DateField(default=timezone.now)
 
+    class Meta:
+        ordering=['carbon']
+
 
