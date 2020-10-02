@@ -23,10 +23,10 @@ def c_footprint(request):
             oil=request.POST["oil"],
             car=request.POST["car"],
             flights=request.POST["flights"],
-            newspaper=request.POST["newspaperOptionsRadios"],
-            aluminium=request.POST["alumtinOptionsRadios"],
+            day  =request.POST["dayOptionsRadios"],
+            meal=request.POST["mealOptionsRadios"],
         )
         x.save()
 
-        return redirect('home')
+        return redirect('carbon_daily')
     return render(request , 'carbon_footprint.html')
