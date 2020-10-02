@@ -58,10 +58,7 @@
           <a class="nav-link" href="{% url 'ngos' %}">
             <i class="fas fa-hand-holding-medical"></i><span>NGO</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'carbon_footprint' %}">
-            <i class="fas fa-shoe-prints"></i><span>Carbon footprint</span></a>
-        </li>
+
       <li class="nav-item">
         <a class="nav-link" href="{% url 'quiz' %}">
         <i class="fas fa-book-reader"></i><span>Quizzes</span></a>
@@ -70,19 +67,19 @@
           <a class="nav-link" href="{% url 'orgs' %}">
             <i class="fas fa-industry"></i><span>Organizations</span></a>
       </li>
-      {% if user.is_authenticated %}
+      <!-- {% if user.is_authenticated %} -->
       <!-- Nav Items -->
       <li class="nav-item">
         <a class="nav-link" href="{% url 'Blogs:blog' %} ">
           <i class="fab fa-canadian-maple-leaf"></i><span>Nature Book</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'Blogs:create_post' %} "> <i class="fas fa-fw fa-chart-area"></i>
+        <a class="nav-link" href="{% url 'Blogs:create_post' %} "> <i class="fas fa-pen-alt"></i>
           <span>Add a Post</span></a>
          </i>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'leader_board' %} "> <i class="fas fa-fw fa-chart-area"></i>
+        <a class="nav-link" href="{% url 'leader_board' %} "> <i class="fas fa-medal"></i>
           <span>Leaderboard</span></a>
          </i>
       </li>
@@ -96,15 +93,15 @@
           <span>logout</span></a>
          </i>
       </li>
-      
-      {% else %}
+<!--       
+      {% else %} -->
       <li class="nav-item">
         <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span>Login</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i><span>Register</span></a>
     </li> 
-   {% endif %}
+   <!-- {% endif %} -->
       <li class="nav-item">
         <a class="nav-link" href="{% url 'leader_board' %}"><i class="fab fa-sketch"></i><span>Leaderboard</span></a>
       </li>
