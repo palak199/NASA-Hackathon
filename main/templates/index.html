@@ -1,5 +1,7 @@
 {% extends "base.html"%}
+{% load static %}
 {% block content %}
+
 <style>
   .chart{
     height:400px;
@@ -14,7 +16,7 @@
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
               Take a pledge</button><br>
-            <button href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Certificate</button>
+            <button href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"> <a href="{%static 'images/certificate.jpg'%}" download>Generate Certificate</a></button>
 
           </div>
 
@@ -55,7 +57,7 @@
               </div>
             </div>
 
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -73,7 +75,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div> 
 
             <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-4 mb-4">

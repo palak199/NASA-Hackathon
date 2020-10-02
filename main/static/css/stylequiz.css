@@ -34,7 +34,7 @@ a:active {
 }
 .grid {
   display: grid;
-  width: 114rem;
+  width: rem;
   grid-gap: 6rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: start;
