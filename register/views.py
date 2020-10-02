@@ -7,7 +7,7 @@ from .models import Category
 def category(request):  ##For category registration
     if request.method=='POST':
         print('request.POST["category"],') 
-        category  = request.POST["category"], 
+        category  = request.POST["category"] 
             
         x=Category.objects.create(
             user=request.user,
@@ -51,4 +51,3 @@ def register(request):
             messages.info(request, "Passwords dont match")
             return redirect('register')
     return render (request, 'register.html')
-

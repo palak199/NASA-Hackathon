@@ -30,23 +30,28 @@ def index(request):
         'data':match
     }
 
-    user=request.user
-    if user:
-        today = datetime.datetime.now().date()
-        x=Water_level.objects.filter(user=request.user).first()
+    try :
+        user=request.user
+        if user:
+            today = datetime.datetime.now().date()
+            x=Water_level.objects.filter(user=request.user).first()
 
-        if x :
-            y=x.time.date()
-            if y==today:
-                return render(request,'index.html',context)
+            if x :
+                y=x.time.date()
+                if y==today:
+                    return render(request,'index.html',context)
+                else:
+                    new=Water_level.objects.create(user=request.user)
+                    new.save()
             else:
                 new=Water_level.objects.create(user=request.user)
                 new.save()
-        else:
-            new=Water_level.objects.create(user=request.user)
-            new.save()
+            
+            return render(request, 'index.html',context)
+    except:
+        return render(request, 'index.html')
+
         
-    return render(request, 'index.html',context)
 
 def survey(request):
     return render(request,'survey-individual.html')   
