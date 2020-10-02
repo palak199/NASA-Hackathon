@@ -24,7 +24,9 @@
                   <hr>
                  {% for i in score_in %}
                
-               <div> {{ i.user }}  <br> You've got {{  i.score }}</div> 
+               <div> {{ i.user.first_name }}  <br>
+                
+                 You've got {{  i.carbon }}{{i.score}}</div> 
 
 
                  {% endfor %}
